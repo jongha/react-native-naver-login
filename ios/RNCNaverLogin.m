@@ -97,18 +97,18 @@ RCT_REMAP_METHOD(logout,
 
 #pragma mark - NaverThirdPartyLoginConnectionDelegate
 
-- (void)oauth20ConnectionDidOpenInAppBrowserForOAuth:(NSURLRequest *)request {
+// - (void)oauth20ConnectionDidOpenInAppBrowserForOAuth:(NSURLRequest *)request {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NLoginThirdPartyOAuth20InAppBrowserViewController *inappAuthBrowser = [[NLoginThirdPartyOAuth20InAppBrowserViewController alloc] initWithRequest:request];
-        UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-        while (topController.presentedViewController) {
-            topController = topController.presentedViewController;
-        }
-        [topController presentViewController:inappAuthBrowser animated:YES completion:nil];
-    });
-    //    [self presentWebviewControllerWithRequest:request];
-}
+//     dispatch_async(dispatch_get_main_queue(), ^{
+//         NLoginThirdPartyOAuth20InAppBrowserViewController *inappAuthBrowser = [[NLoginThirdPartyOAuth20InAppBrowserViewController alloc] initWithRequest:request];
+//         UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+//         while (topController.presentedViewController) {
+//             topController = topController.presentedViewController;
+//         }
+//         [topController presentViewController:inappAuthBrowser animated:YES completion:nil];
+//     });
+//     //    [self presentWebviewControllerWithRequest:request];
+// }
 
 
 - (void)oauth20ConnectionDidFinishRequestACTokenWithAuthCode {
